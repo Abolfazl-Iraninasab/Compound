@@ -44,7 +44,7 @@ module.exports = {
     mainnetFork: {
      host: "127.0.0.1",     // Localhost (default: none)
      port: 8545,            // Standard Ethereum port (default: none)
-     network_id: "*",       // Any network (default: none)
+     network_id: "999",       // Any network (default: none)
     },
     // Another network with more advanced options...
     // advanced: {
