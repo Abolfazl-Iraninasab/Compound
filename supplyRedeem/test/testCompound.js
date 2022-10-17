@@ -14,9 +14,9 @@ contract("TestCompound", (accounts) => {
     // const C_TOKEN = "0xC11b1268C1A384e55C48c2391d8d480264A3A7F4"     // CWBTC
     // in CWBTC contract minting is paused so we use DAI instead
 
-    const WHALE = "0xcffad3200574698b78f32232aa9d63eabd290703"; // WBTC_WHALE
-    const TOKEN = "0x6B175474E89094C44Da98b954EedeAC495271d0F"; // WBTC
-    const C_TOKEN = "0x5d3a536E4D6DbD6114cc1Ead35777bAB948E3643"; // CWBTC
+    const WHALE = "0xcffad3200574698b78f32232aa9d63eabd290703"; // DAI_WHALE
+    const TOKEN = "0x6B175474E89094C44Da98b954EedeAC495271d0F"; // DAI
+    const C_TOKEN = "0x5d3a536E4D6DbD6114cc1Ead35777bAB948E3643"; // cDAI
     const DEPOSIT_AMOUNT = pow(10, 18).mul(new BN(1));
 
     let testCompound;
