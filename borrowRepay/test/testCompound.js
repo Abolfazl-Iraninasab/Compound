@@ -92,7 +92,9 @@ contract("TestCompound", (accounts) => {
     it("should supply, borrow and repay", async () => {
         // used for debugging
         let snap;
-
+        console.log(`--------before supply---------`)
+        console.log(`cToken balance of test contract: ${await cToken.balanceOf(testCompound.address)}`);
+        // await cToken.balanceOf(testCompound)
         // supply
         await token.approve(testCompound.address, SUPPLY_AMOUNT, {
             from: WHALE,
@@ -103,7 +105,8 @@ contract("TestCompound", (accounts) => {
 
         // borrow
         snap = await snapshot(testCompound, tokenToBorrow);
-        console.log(`--- borrow (before) ---`);
+        console.log(`------- after supply , before borrow  -------`);
+        console.log(`cToken balance of test contract: ${await cToken.balanceOf(testCompound.address)}`);
         console.log(`collateral factor: ${snap.colFactor} %`);
         console.log(`supplied: ${snap.supplied}`);
         console.log(`liquidity: $ ${snap.liquidity}`);
@@ -118,7 +121,8 @@ contract("TestCompound", (accounts) => {
         });
 
         snap = await snapshot(testCompound, tokenToBorrow);
-        console.log(`--- borrow (after) ---`);
+        console.log(`--- after borrow  ---`);
+        console.log(`cToken balance of test contract: ${await cToken.balanceOf(testCompound.address)}`)
         console.log(`liquidity: $ ${snap.liquidity}`);
         console.log(`max borrow: ${snap.maxBorrow}`);
         console.log(`borrowed balance (compound): ${snap.borrowedBalance}`);
@@ -150,7 +154,8 @@ contract("TestCompound", (accounts) => {
         );
 
         snap = await snapshot(testCompound, tokenToBorrow);
-        console.log(`--- repay ---`);
+        console.log(`--- after repay ---`);
+        console.log(`cToken balance of test contract: ${await cToken.balanceOf(testCompound.address)}`)
         console.log(`liquidity: $ ${snap.liquidity}`);
         console.log(`max borrow: ${snap.maxBorrow}`);
         console.log(`borrowed balance (compound): ${snap.borrowedBalance}`);
