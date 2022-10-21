@@ -11,5 +11,12 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "@openzeppelin/contracts": "^4.7.3",
+    "b.js": "^0.0.1"
+  },
+  "devDependencies": {
+    "@openzeppelin/test-helpers": "^0.5.16"
+  }
 }
