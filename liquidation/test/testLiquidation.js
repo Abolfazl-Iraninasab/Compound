@@ -3,6 +3,7 @@ const assert = require("assert");
 const BN = require("bn.js");
 const { sendEther, pow } = require("./util");
 const { web3 } = require("@openzeppelin/test-helpers/src/setup");
+// const helper = require("./blockAdvancerHelper.js");
 
 const IERC20 = artifacts.require("IERC20");
 const CErc20 = artifacts.require("CErc20");
@@ -130,6 +131,14 @@ contract("TestLiquidation", (accounts) => {
             // web3.eth.getBlock("latest").then(console.log);
 
             await time.advanceBlockTo(await blockIndex1.number + 2000 );
+
+            /////////  second way to advance block and time using blockAdvancerHelper.js ///////////
+            // const advancement = 2000;
+            // const originalBlock = web3.eth.getBlock('latest');
+            // const newBlock = await helper.advanceTimeAndBlock(web3,advancement);
+            // const timeDiff = newBlock.timestamp - originalBlock.timestamp;
+            // console.log(timeDiff)
+            //////////////////////////////////////////////////////////
 
             console.log(`------after advance 2000 block-------`);
             const blockIndex2 = await web3.eth.getBlock("latest"); // .then(console.log)
