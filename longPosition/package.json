@@ -15,5 +15,8 @@
   "dependencies": {
     "@openzeppelin/contracts": "^4.7.3",
     "bn.js": "^5.2.1"
+  },
+  "devDependencies": {
+    "@openzeppelin/test-helpers": "^0.5.16"
   }
 }
