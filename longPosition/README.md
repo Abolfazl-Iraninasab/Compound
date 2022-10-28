@@ -1,12 +1,13 @@
 ## Long position - Compound Protocol 
 In this code I will long ETH using Compound and Uniswap. The steps are as below :  
-    * supply ETH to Compound  
-    * borrow DAI from Compound  
-    * buy ETH in Uniswap using DAI that we borrowed from Compound  
-    * when the price of ETH goes up , it's time to close the position! so we follow steps below :  
-    * swap ETH for DAI in Uniswap  
-    * repay borrowed DAI  
-    * redeem supplied ETH  
++ supply ETH to Compound  
++ borrow DAI from Compound  
++ buy ETH in Uniswap using DAI that we borrowed from Compound  
+
+When the price of ETH goes up , it's time to close the position! so we follow steps below :  
++ swap ETH for DAI in Uniswap  
++ repay borrowed DAI  
++ redeem supplied ETH  
 
 ## run the test using ganache-cli  
 1) Call command below in CMD to run ganache on the mainnet fork:  
